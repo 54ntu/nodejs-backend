@@ -14,4 +14,13 @@ app.use(express.static("public")) // static method helps to handle images, files
 app.use(cookieParser()) // to handle cookies
 
 
+// routes import
+const {router} = require('./routes/user.routes')
+
+//routes declaration
+app.use("/api/v1/user",router)
+
+
+
+
 module.exports = {app}

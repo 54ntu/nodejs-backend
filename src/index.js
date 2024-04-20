@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { app } = require('./app');
+const {app} = require('./app')
 const { connectDB } = require("./db/db");
 
 
@@ -14,3 +14,5 @@ connectDB()
 .catch((error)=>{
     console.log('database connection failed!!!!!',error)
 })
+
+
