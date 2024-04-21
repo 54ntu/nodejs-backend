@@ -273,7 +273,7 @@ const changeCurrentPassword = asyncHandler(async(req,res)=>{
     throw new ApiError(400,"invalid password")
   }
 
-  User.password = password
+  User.password =newPassword
   await User.save({validateBeforeSave:false })
 
   return res.status(200)
@@ -289,7 +289,9 @@ const getCurrentUser= asyncHandler(async (req,res)=>{
 
 
   return res.status(200)
-  .json(200,req.user,"current user is getched successfully!!!")
+  .json(
+    new ApiResponse(200, req.user, "current user detail is fetched")
+  )
 
 })
 
